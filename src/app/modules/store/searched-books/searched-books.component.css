@@ -1,0 +1,53 @@
+button {
+  height: 50px;
+  transition: all 0.3s ease-in-out;
+}
+
+.not-found-book {
+  display: flex;
+  justify-content: center;
+  max-width: 100vw;
+  
+}
+
+p {
+  padding: 20px;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+}
+
+.book {
+  background: #1c1c1e;
+  border-radius: 10px;
+  max-width: 500px;
+}
+
+input {
+  color: black !important;
+}
+
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border: none;
+}
+
+.add-book-btn:hover, .btn-success:hover {
+  background-color: #1e7e34;
+  color: white;
+}
+
+.add-book-btn{
+  background-color: white;
+  color: black;
+}

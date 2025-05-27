@@ -1,0 +1,99 @@
+<div class="container py-4">
+    <h2 class="mb-4">Checkout</h2>
+    
+    <div class="row g-4">
+      <!-- Delivery Address Section -->
+      <div class="col-12 col-lg-7">
+        <div class="card shadow-sm p-4 mb-4">
+          <h5 class="mb-3">Delivery Address</h5>
+          
+          <div class="address-options mb-4">
+            <div class="form-check mb-2" *ngFor="let address of addresses">
+              <input class="form-check-input" type="radio" name="address" id="homeAddress" [checked]="address.isDefaultAddress" >
+              <label class="form-check-label" for="homeAddress">
+                <strong>{{address.label}}</strong>
+                <p class="mb-0 text-muted">{{address.fullName}}, {{address.phone}} </p>
+                <p class="mb-0 text-muted">{{address.street}}, {{address.city}}, {{address.state}}, {{address.country}}, {{address.pincode}} </p>
+              </label>
+            </div>
+            
+            <button class="btn btn-outline-primary btn-sm mt-2" routerLink="/bookster/address">
+              <i class="bi bi-plus"></i> Add New Address
+            </button>
+          </div>
+        </div>
+        
+        <!-- Payment Section -->
+        <div class="card shadow-sm p-4">
+          <h5 class="mb-3">Payment Method</h5>
+          
+          <div class="alert alert-info mb-4">
+            <i class="bi bi-info-circle"></i> Please complete your payment to confirm the order
+          </div>
+          
+          <div class="qr-payment-section text-center py-3">
+            <h6 class="text-muted mb-3">Scan to pay with UPI</h6>
+            <div class="qr-code-container bg-white p-3 d-inline-block rounded shadow-sm mb-3">
+              <!-- Replace with your actual Google Pay QR code image -->
+              <img src="../../../../assets/images/qr-code.jpeg" alt="UPI QR Code" class="img-fluid" style="max-width: 200px;">
+            </div>
+            <p class="text-muted small mb-0">Amount will be automatically detected</p>
+            <p class="text-muted small">UPI ID: pratyakshp12.pp29@oksbi</p>
+          </div>
+          
+          <div class="payment-status text-center mt-4" *ngIf="paymentSuccess">
+            <div class="alert alert-success">
+              <i class="bi bi-check-circle-fill"></i> Payment received successfully!
+            </div>
+            <p>Redirecting to orders page...</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Order Summary -->
+      <div class="col-12 col-lg-5">
+        <div class="card shadow-sm p-4 sticky-top" style="top: 20px;">
+          <h5 class="mb-3">Order Summary</h5>
+          
+          <div class="order-items mb-3">
+            <div *ngFor="let item of cartData" class="d-flex justify-content-between py-2 border-bottom">
+              <div class="d-flex">
+                <img [src]="item.imageLinks?.thumbnail || item.imageLinks?.smallThumbnail || 'assets/book-placeholder.jpg'" 
+                     class="me-2" style="width: 40px; height: auto;">
+                <div>
+                  <h6 class="mb-0">{{item.title}}</h6>
+                  <small class="text-muted">Qty: {{item.stock}}</small>
+                </div>
+              </div>
+              <div class="text-end">
+                <div>Rs. {{item.price * item.stock | number}}</div> <span *ngIf="item.stock > 1">({{ item.price }})</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="d-flex justify-content-between mb-2">
+            <span>Subtotal ({{getTotalItems() | number}} items)</span>
+            <span>Rs. {{getSubtotal() | number}}</span>
+          </div>
+          <div class="d-flex justify-content-between mb-2">
+            <span>Delivery</span>
+            <span class="text-success">Free</span>
+          </div>
+          <hr>
+          <div class="d-flex justify-content-between fw-bold mb-4">
+            <span>Total</span>
+            <span>Rs. {{getSubtotal() | number}}</span>
+          </div>
+          
+          <button class="btn btn-primary w-100 py-2" (click)="simulatePayment()" [disabled]="paymentSuccess">
+            <span *ngIf="!paymentSuccess">Confirm Payment</span>
+            <span *ngIf="paymentSuccess"><i class="bi bi-check-circle"></i> Paid</span>
+          </button>
+          
+          <div class="text-center mt-3">
+            <small class="text-muted">By placing your order, you agree to our Terms of Service</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

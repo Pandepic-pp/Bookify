@@ -1,0 +1,56 @@
+/* Ensure HTML and body take full height */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Wrapper should take full height */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+}
+
+/* Body Section takes available space */
+.body-section {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Footer sticks at the bottom */
+footer {
+  background-color: #1e1e1e;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  margin-top: auto; /* Push footer to the bottom */
+}
+
+/* Footer links styling */
+.footer-links a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Navbar and links */
+nav {
+  padding: 20px;
+  display: flex;
+  background-color: black;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Search Bar */
+.search-input {
+  width: 400px;
+}

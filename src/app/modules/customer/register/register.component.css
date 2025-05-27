@@ -1,0 +1,37 @@
+.register-box {
+  width: 400px;
+  background: #1e1e1e; /* Dark grey box */
+  border-radius: 12px;
+  color: white;
+}
+
+.form-container input,
+.form-container select {
+  background: #2c2c2c; /* Input background */
+  color: white;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.form-container input::placeholder {
+  color: #aaa;
+}
+
+.btn-primary {
+  background: #007bff;
+  border: none;
+}
+
+.btn-success {
+  background: #28a745;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+}
+
+.btn-success:hover {
+  background: #1e7e34;
+}

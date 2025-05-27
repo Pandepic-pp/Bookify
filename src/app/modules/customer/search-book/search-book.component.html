@@ -1,0 +1,33 @@
+<div class="wrapper d-flex gap-3">
+  <div class="filters d-flex flex-column align-items-center w-25 bg-white rounded p-3">
+    <h3 class="mt-2">Sort & Search</h3>
+    <button class="btn btn-success" (click)="goToSearchBook()">Search Book</button>
+    <div class="sort-price w-100">
+      <p class="mb-2">Price</p>
+      <div class="filter-buttons d-flex flex-column gap-2">
+        <button class="btn btn-outline-primary" (click)="sort('lowToHigh')">Low to High</button>
+        <button class="btn btn-outline-primary" (click)="sort('highToLow')">High to Low</button>
+      </div>
+    </div>
+  </div>
+  <div class="book-results d-flex flex-column gap-3 w-75">
+    <div class="card p-3" *ngFor="let book of books" style="border-radius: 10px; background-color: white;">
+      <div class="book-info d-flex gap-3">
+        <img
+          [src]="book.ImageLinks?.thumbnail || book.ImageLinks?.smallThumbnail"
+          class="book-image"
+          alt="{{ book.Title }}"
+        />
+        <div class="book-details">
+          <a routerLink="" class="book-title">{{ book.Title }}</a>
+          <h4 class="book-authors">{{ book.Authors.join(", ") }}</h4>
+          <h4 class="book-price">Rs. {{ book.Price }}</h4>
+          <div class="d-flex gap-2">
+            <button class="btn btn-success" (click)="updateCart(book)">Add to Cart</button>
+            <button class="btn btn-success">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,129 @@
+<div class="customer-address container d-flex flex-column-reverse">
+  <div class="add-address card shadow-sm py-4 px-5 mx-auto w-50">
+    <form [formGroup]="form" (ngSubmit)="Address(form)" class="d-grid gap-3">
+      <h3 class="text-center text-light">Add Address</h3>
+      <div class="row gap-3">
+        <input
+          type="text"
+          formControlName="fullName"
+          placeholder="Full Name"
+          class="form-control col"
+        />
+        <input
+          type="text"
+          formControlName="phone"
+          placeholder="Phone"
+          class="form-control col"
+        />
+      </div>
+
+      <div class="row gap-3">
+        <input
+          type="text"
+          formControlName="country"
+          placeholder="country"
+          class="form-control col"
+        />
+        <input
+          type="text"
+          formControlName="city"
+          placeholder="city"
+          class="form-control col"
+        />
+      </div>
+      <div class="row gap-3">
+        <input
+          type="text"
+          formControlName="state"
+          placeholder="state"
+          class="form-control col"
+        />
+        <input
+          type="text"
+          formControlName="pincode"
+          placeholder="pincode"
+          class="form-control col"
+        />
+      </div>
+
+      <div class="row">
+        <input
+          type="text"
+          formControlName="street"
+          placeholder="street"
+          class="form-control col"
+        />
+      </div>
+      <div class="row">
+        <select formControlName="label" id="label" class="form-select col">
+          <option value="Work">Work</option>
+          <option value="Home">Home</option>
+        </select>
+      </div>
+
+      <div class="custom-checkbox">
+        <input
+          type="checkbox"
+          formControlName="isDefaultAddress"
+          id="isDefaultAddress"
+        />
+        <label for="isDefaultAddress">Is Default Address</label>
+      </div>
+
+      <div class="row">
+        <button class="btn bg-success text-white col" type="submit">
+          Save Address
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <br />
+  <hr />
+  <br />
+
+  <div class="table-responsive">
+    <table
+      class="table table-dark table-striped table-hover text-center shadow-sm"
+    >
+      <thead class="table-light">
+        <tr>
+          <th>Receiver Name</th>
+          <th>Label</th>
+          <th>Phone</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Pincode</th>
+          <th>Street</th>
+          <th>Country</th>
+          <th>Is Default Address</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let a of address">
+          <td>{{ a.fullName }}</td>
+          <td>{{ a.label }}</td>
+          <td>{{ a.phone }}</td>
+          <td>{{ a.city }}</td>
+          <td>{{ a.state }}</td>
+          <td>{{ a.pincode }}</td>
+          <td>{{ a.street }}</td>
+          <td>{{ a.country }}</td>
+          <td>{{ a.isDefaultAddress ? "Yes" : "No" }}</td>
+          <td class="d-flex justify-content-center gap-2">
+            <button class="btn btn-outline-warning" (click)="Edit(a.addressId)">
+              Edit
+            </button>
+            <button
+              class="btn btn-outline-danger"
+              (click)="Delete(a.addressId)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

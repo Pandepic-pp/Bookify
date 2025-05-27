@@ -1,0 +1,153 @@
+<div class="container">
+  <div class="hero-container mb-4">
+    <div class="hero-content text-white">
+      <h1 class="display-4 fw-bold">Welcome to the World of Books</h1>
+      <p class="lead mb-4">Discover your next favorite read. Whether you're a fiction lover, a philosophy enthusiast, or a young reader, we have something for everyone.</p>
+      <a href="#" class="btn btn-primary btn-lg">Shop Now</a>
+    </div>
+    <!-- Hero Image -->
+    <div class="hero-image"></div>
+  </div>
+
+  <!-- Juvenile Fiction Section -->
+  <div class="headers d-flex flex-column justify-content-center align-items-between mb-3">
+    <h3 class="mb-3">Philosophy</h3>
+    <div class="carousel-container">
+      <div class="carousel-track-reverse">
+        <!-- Original Content -->
+        <div class="carousel-slide" *ngFor="let book of philosophy">
+          <img
+            *ngIf="book.Categories.includes('Philosophy')"
+            [src]="book.ImageLinks?.smallThumbnail || book.ImageLinks?.thumbnail"
+            alt="Book Cover"
+            width="125px"
+            style="border: solid 1px black; box-shadow: 5px 5px 10px;"
+          />
+        </div>
+        <!-- Duplicate Content (First Duplication) -->
+        <div class="carousel-slide" *ngFor="let book of philosophy">
+          <img
+            *ngIf="book.Categories.includes('Philosophy')"
+            [src]="book.ImageLinks?.smallThumbnail || book.ImageLinks?.thumbnail"
+            alt="Book Cover"
+            width="125px"
+            style="border: solid 1px black; box-shadow: 5px 5px 10px;"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Philosophy Section with Infinite Carousel -->
+  <div class="headers d-flex flex-column justify-content-center align-items-between mb-3">
+    <h3 class="mb-3">Philosophy</h3>
+    <div class="carousel-container">
+      <div class="carousel-track">
+        <!-- Original Content -->
+        <div class="carousel-slide" *ngFor="let book of philosophy">
+          <img
+            *ngIf="book.Categories.includes('Philosophy')"
+            [src]="book.ImageLinks?.smallThumbnail || book.ImageLinks?.thumbnail"
+            alt="Book Cover"
+            width="125px"
+            style="border: solid 1px black; box-shadow: 5px 5px 10px;"
+          />
+        </div>
+        <!-- Duplicate Content (First Duplication) -->
+        <div class="carousel-slide" *ngFor="let book of philosophy">
+          <img
+            *ngIf="book.Categories.includes('Philosophy')"
+            [src]="book.ImageLinks?.smallThumbnail || book.ImageLinks?.thumbnail"
+            alt="Book Cover"
+            width="125px"
+            style="border: solid 1px black; box-shadow: 5px 5px 10px;"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="headers d-flex flex-column justify-content-center align-items-between mb-3">
+    <h3 class="mb-3">Philosophy</h3>
+    <div class="carousel-container">
+      <div class="carousel-track-reverse">
+        <!-- Original Content -->
+        <div class="carousel-slide" *ngFor="let book of philosophy">
+          <img
+            *ngIf="book.Categories.includes('Philosophy')"
+            [src]="book.ImageLinks?.smallThumbnail || book.ImageLinks?.thumbnail"
+            alt="Book Cover"
+            width="125px"
+            style="border: solid 1px black; box-shadow: 5px 5px 10px;"
+          />
+        </div>
+        <!-- Duplicate Content (First Duplication) -->
+        <div class="carousel-slide" *ngFor="let book of philosophy">
+          <img
+            *ngIf="book.Categories.includes('Philosophy')"
+            [src]="book.ImageLinks?.smallThumbnail || book.ImageLinks?.thumbnail"
+            alt="Book Cover"
+            width="125px"
+            style="border: solid 1px black; box-shadow: 5px 5px 10px;"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="headers d-flex flex-column justify-content-center align-items-between mb-3">
+    <h3 class="mb-3">Philosophy</h3>
+    <div class="carousel-container">
+      <div class="carousel-track">
+        <!-- Original Content -->
+        <div class="carousel-slide" *ngFor="let book of philosophy">
+          <img
+            *ngIf="book.Categories.includes('Philosophy')"
+            [src]="book.ImageLinks?.smallThumbnail || book.ImageLinks?.thumbnail"
+            alt="Book Cover"
+            width="125px"
+            style="border: solid 1px black; box-shadow: 5px 5px 10px;"
+          />
+        </div>
+        <!-- Duplicate Content (First Duplication) -->
+        <div class="carousel-slide" *ngFor="let book of philosophy">
+          <img
+            *ngIf="book.Categories.includes('Philosophy')"
+            [src]="book.ImageLinks?.smallThumbnail || book.ImageLinks?.thumbnail"
+            alt="Book Cover"
+            width="125px"
+            style="border: solid 1px black; box-shadow: 5px 5px 10px;"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="headers d-flex flex-column justify-content-center align-items-between mb-3">
+    <h3 class="mb-3">Philosophy</h3>
+    <div class="carousel-container">
+      <div class="carousel-track-reverse">
+        <!-- Original Content -->
+        <div class="carousel-slide" *ngFor="let book of philosophy">
+          <img
+            *ngIf="book.Categories.includes('Philosophy')"
+            [src]="book.ImageLinks?.smallThumbnail || book.ImageLinks?.thumbnail"
+            alt="Book Cover"
+            width="125px"
+            style="border: solid 1px black; box-shadow: 5px 5px 10px;"
+          />
+        </div>
+        <!-- Duplicate Content (First Duplication) -->
+        <div class="carousel-slide" *ngFor="let book of philosophy">
+          <img
+            *ngIf="book.Categories.includes('Philosophy')"
+            [src]="book.ImageLinks?.smallThumbnail || book.ImageLinks?.thumbnail"
+            alt="Book Cover"
+            width="125px"
+            style="border: solid 1px black; box-shadow: 5px 5px 10px;"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

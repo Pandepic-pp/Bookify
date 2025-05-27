@@ -1,0 +1,79 @@
+.add-address {
+  background: #1c1c1e; /* Dark grey background */
+  border-radius: 10px;
+  max-width: 500px;
+}
+
+input,
+select {
+  background: #2c2c2e !important;
+  color: white !important;
+  border: 1px solid #3a3a3c !important;
+}
+
+input::placeholder {
+  color: #b3b3b3 !important;
+}
+
+.table {
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.table th,
+.table td {
+  border: 1px solid #3a3a3c !important;
+}
+
+button {
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.custom-checkbox input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.custom-checkbox input[type="checkbox"]:checked {
+  background-color: #28a745; /* Green background when checked */
+  border-color: #28a745;
+}
+
+.custom-checkbox input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: all 0.2s ease;
+}
+
+.custom-checkbox input[type="checkbox"]:checked::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.custom-checkbox label {
+  font-size: 16px;
+  color: #fff; /* White text */
+  cursor: pointer;
+}

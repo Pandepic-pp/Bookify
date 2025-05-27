@@ -1,0 +1,66 @@
+/* Main Container */
+.container {
+    max-width: 1200px;
+  }
+  
+  /* Card Styling */
+  .card {
+    border: none;
+    border-radius: 10px;
+    background-color: #fff;
+  }
+  
+  /* Address Selection */
+  .address-options {
+    border-left: 3px solid #f1f1f1;
+    padding-left: 1rem;
+  }
+  
+  .form-check-input:checked {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+  }
+  
+  .form-check-label {
+    margin-left: 0.5rem;
+    cursor: pointer;
+  }
+  
+  /* QR Code Styling */
+  .qr-code-container {
+    border: 1px dashed #ddd;
+  }
+  
+  /* Payment Status */
+  .payment-status {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Order Summary */
+  .order-items img {
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  /* Button States */
+  .btn-primary:disabled {
+    background-color: #198754;
+    border-color: #198754;
+    opacity: 1;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .sticky-top {
+      position: static !important;
+    }
+    
+    .qr-code-container {
+      max-width: 180px;
+    }
+  }

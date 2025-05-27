@@ -1,0 +1,45 @@
+<div class="customer-login-form d-flex flex-column align-items-center">
+  <div class="login-box p-4 rounded shadow-lg">
+    <!-- Email Login Form -->
+    <form
+      [formGroup]="form"
+      (ngSubmit)="Login(form)"
+      *ngIf="!isEmailCorrect"
+      class="form-container"
+    >
+      <h3 class="text-center mb-4">Login</h3>
+
+      <div class="mb-3">
+        <input
+          type="text"
+          formControlName="email"
+          placeholder="Enter Email"
+          class="form-control"
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Log in</button>
+    </form>
+
+    <!-- OTP Verification Form -->
+    <form
+      [formGroup]="otpLogin"
+      (ngSubmit)="LoginOtp(otpLogin)"
+      *ngIf="isEmailCorrect"
+      class="form-container"
+    >
+      <h3 class="text-center mb-4">Enter OTP</h3>
+
+      <div class="mb-3">
+        <input
+          type="text"
+          formControlName="otp"
+          placeholder="Enter OTP"
+          class="form-control"
+        />
+      </div>
+
+      <button type="submit" class="btn btn-success w-100">Submit OTP</button>
+    </form>
+  </div>
+</div>

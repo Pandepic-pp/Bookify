@@ -1,0 +1,100 @@
+.book-results{
+    width: 100%;
+}/* Global Styles */
+body {
+    background-color: #eba626;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Filters Section */
+  .filters {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .filters h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .sort-price p {
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .filter-buttons .btn {
+    background-color: transparent;
+    border: 2px solid #007bff;
+    color: #007bff;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  
+  .filter-buttons .btn:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* Book Results Section */
+  .book-results {
+    width: 100%;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .book-image {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .book-title {
+    color: #333;
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .book-title:hover {
+    color: #007bff;
+  }
+  
+  .book-authors {
+    color: #555;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+  }
+  
+  .book-price {
+    color: #28a745;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .btn-success {
+    background-color: #28a745;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-success:hover {
+    background-color: #218838;
+  }

@@ -1,0 +1,52 @@
+/* Cart Component Styles */
+.empty-cart-message {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+  }
+  
+  .cart-items {
+    background-color: #fff;
+    border-radius: 10px;
+  }
+  
+  .cart-item {
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+  }
+  
+  .cart-item:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .book-cover {
+    max-height: 120px;
+    width: auto;
+    object-fit: contain;
+  }
+  
+  .book-title {
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .book-title:hover {
+    color: #0d6efd;
+    text-decoration: underline;
+  }
+  
+  .btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .book-cover {
+      max-height: 100px;
+    }
+    
+    .cart-item {
+      padding: 1rem !important;
+    }
+  }

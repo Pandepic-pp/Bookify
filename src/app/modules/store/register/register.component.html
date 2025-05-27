@@ -1,0 +1,116 @@
+<div
+  class="store-register-form container d-flex justify-content-center align-items-center"
+>
+  <div class="form-container card shadow-lg px-5 py-4">
+    <!-- Registration Form -->
+    <form
+      [formGroup]="form"
+      (ngSubmit)="Register(form)"
+      *ngIf="!isVerification"
+      class="d-grid gap-3"
+    >
+      <h3 class="text-center text-light">Register Your Store</h3>
+
+      <!-- Row with Two Fields -->
+      <div class="row gap-3">
+        <input
+          type="text"
+          placeholder="Store Name"
+          id="storeName"
+          formControlName="storeName"
+          class="form-control col"
+        />
+      </div>
+
+      <!-- Single Field Row -->
+      <div class="row">
+        <input
+          type="text"
+          placeholder="Email"
+          id="email"
+          formControlName="email"
+          class="form-control col"
+        />
+      </div>
+
+      <!-- Row with Two Fields -->
+      <div class="row">
+        <input
+          type="text"
+          placeholder="Street"
+          id="street"
+          formControlName="street"
+          class="form-control col"
+        />
+      </div>
+
+      <div class="row">
+        <input
+          type="text"
+          placeholder="City"
+          id="city"
+          formControlName="city"
+          class="form-control"
+        />
+      </div>
+
+      <!-- Single Field Row -->
+      <div class="row gap-3">
+        <input
+          type="text"
+          placeholder="State"
+          id="state"
+          formControlName="state"
+          class="form-control col"
+        />
+        <input
+          type="text"
+          placeholder="Country"
+          id="country"
+          formControlName="country"
+          class="form-control col"
+        />
+      </div>
+
+      <!-- Row with Two Fields -->
+      <div class="row gap-3">
+        <input
+          type="text"
+          placeholder="Pincode"
+          id="pincode"
+          formControlName="pincode"
+          class="form-control col"
+        />
+        <input
+          type="text"
+          placeholder="Phone"
+          id="phone"
+          formControlName="phone"
+          class="form-control col"
+        />
+      </div>
+
+      <div class="row">
+        <button type="submit" class="btn btn-primary col">Register</button>
+      </div>
+      
+    </form>
+
+    <!-- OTP Verification Form -->
+    <form
+      [formGroup]="verificationForm"
+      (ngSubmit)="VerifyEmail(verificationForm)"
+      *ngIf="isVerification"
+      class="d-flex flex-column gap-3"
+    >
+      <h3 class="text-center text-light">Verify OTP</h3>
+      <input
+        type="number"
+        formControlName="otp"
+        placeholder="Enter OTP"
+        class="form-control"
+      />
+      <button type="submit" class="btn btn-success w-100">Submit OTP</button>
+    </form>
+  </div>
+</div>

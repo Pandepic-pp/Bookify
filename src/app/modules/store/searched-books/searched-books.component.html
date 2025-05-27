@@ -1,0 +1,92 @@
+<div class="container" *ngIf="!isAddBook">
+  <div class="headers d-flex justify-content-between align-items-center mb-3">
+    <h3 class="mb-4 text-center">Search Book</h3>
+  </div>
+  <div class="cards d-flex flex-wrap gap-4 justify-content-center my-4">
+    <div
+      class="card"
+      *ngFor="let book of books"
+      style="border-radius: 10px"
+      (click)="onClick(book)"
+    >
+      <app-custom-card
+        [imageLink]="
+          book.imageLinks?.thumbnail || book.imageLinks?.smallThumbnail
+        "
+        [bookName]="book.title"
+        [author]="book.authors[0]"
+        [fromPage]="'Store'"
+      >
+      </app-custom-card>
+    </div>
+  </div>
+  <div class="not-found-book mt-5">
+    <p class="">
+      Did not find the book? Just add it
+      <button (click)="AddBook()" class="btn add-book-btn">Add Book</button>
+    </p>
+  </div>
+</div>
+
+<div class="books container d-flex flex-column" *ngIf="isAddBook">
+  <div class="book card shadow-sm py-4 px-5 mx-auto w-50">
+    <form [formGroup]="form" (ngSubmit)="submitForm(form)" class="d-grid gap-3">
+      <h3 class="text-center text-light">Add Book</h3>
+
+      <input
+        formControlName="title"
+        type="text"
+        placeholder="Title"
+        class="form-control"
+      />
+
+      <input
+        formControlName="price"
+        type="number"
+        placeholder="Price"
+        class="form-control"
+      />
+
+      <input
+        formControlName="availableStock"
+        type="number"
+        placeholder="Available Stock"
+        class="form-control"
+      />
+
+      <div formArrayName="authors" class="d-flex flex-column gap-3">
+        <div
+          *ngFor="let author of authors.controls; let i = index"
+          class="d-flex gap-3"
+        >
+          <input
+            [formControlName]="i"
+            type="text"
+            placeholder="Author Name"
+            class="form-control"
+          />
+          <button
+            type="button"
+            (click)="removeAuthor(i)"
+            class="btn btn-danger"
+          >
+            Remove
+          </button>
+        </div>
+      </div>
+
+      <button type="button" (click)="addAuthor()" class="btn btn-primary">
+        Add Author
+      </button>
+
+      <div class="d-flex gap-3 w-full justify-content-center">
+        <button type="submit" class="btn btn-success" style="width: 125px">
+          Add Book
+        </button>
+        <button class="btn btn-danger" style="width: 125px" (click)="(Cancel)">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
